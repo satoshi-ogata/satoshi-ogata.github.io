@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Image from "next/image";
 
 import { SwiperPagination } from "../components/molecules/SwiperPagination";
 import { Slide } from "../components/organisms/Slide";
@@ -32,14 +31,7 @@ const IndexPage = () => {
 
   const About = () => (
     <section className="about">
-      <div className="about-img">
-        <Image
-          src="/me.jpg"
-          alt="Picture of the author"
-          width={500}
-          height={500}
-        />
-      </div>
+      <img className="about-img" src="/me.jpg" alt="Picture of the author" />
       <div className="about-header">SATOSHI OGATA</div>
       <div className="about-content">FRONTEND WEB DEVELOPER</div>
       <div className="about-detail">
