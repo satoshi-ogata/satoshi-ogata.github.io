@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 const SlideLeft = ({ item }) => (
   <aside className="left-side">
@@ -31,58 +31,18 @@ const SlideCenter = ({ item }) => (
   </main>
 );
 
-const useBreakpoint = () => {
-  const [isCollapsed, setCollapsed] = useState(false);
-
-  useEffect(() => {
-    function shouldBreakpoint() {
-      const width = window.innerWidth;
-      setCollapsed(width < 830);
-    }
-
-    window.addEventListener("resize", shouldBreakpoint);
-
-    shouldBreakpoint();
-  }, []);
-
-  return isCollapsed;
-};
 export const Slide = ({ currentPage, items }) => {
+  const item = items[currentPage];
   const ref = useRef();
-  const [slideHeight, setSlideHeight] = useState(ref.current?.clientHeight);
 
   useEffect(() => {
-    function getSlideHeight() {
-      setSlideHeight(ref.current.clientHeight);
-    }
-    window.addEventListener("resize", getSlideHeight);
-    getSlideHeight();
-  });
+    ref.current?.classList.add("swiper-slide-active");
+  }, [currentPage]);
 
-  const isCollapsed = useBreakpoint();
-
-  const getTranslateY = (i) => {
-    let value = slideHeight * i || 0;
-    if (value && isCollapsed) {
-      const buffer = 100;
-      value += buffer;
-    }
-    return `translateY(-${value}px)`;
-  };
-
-  return items.map((item, i) => (
-    <div
-      key={item.title}
-      ref={ref}
-      className={`main swiper-slide ${
-        i === currentPage && "swiper-slide-active"
-      }`}
-      style={{
-        transform: getTranslateY(i),
-      }}
-    >
+  return (
+    <div key={item.id} ref={ref} className="main swiper-slide">
       <SlideLeft item={item} />
       <SlideCenter item={item} />
     </div>
-  ));
+  );
 };
