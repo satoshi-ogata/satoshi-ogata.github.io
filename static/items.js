@@ -40,4 +40,11 @@ export const items = [
     description:
       "Reactでの画面リプレースを主に行う。他、非機能要件のテストとして Seleniumを用いたE2Eテストの実施、ツール開発(python)、テスターとしてテスト業務を行う。",
   },
+  {
+    id: 6,
+    title: "ポートフォリオサイト",
+    subTitle: "https://github.com/satoshi-ogata/satoshi-ogata.github.io",
+    stack: "Next.js, Sass",
+    description: "このポートフォリオサイトです。",
+  },
 ];
