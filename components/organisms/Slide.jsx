@@ -18,14 +18,12 @@ const SlideLeft = ({ item }) => (
 const SlideCenter = ({ item }) => (
   <main className="center">
     <div className="right-side__img">
+      <div className="mock-bg" />
       <img
-        className="bottle-bg"
-        src="https://cdn.shopify.com/s/files/1/0689/1443/t/34/assets/Beach_1920.jpg?v=1029210661698833530"
-        alt=""
-      />
-      <img
-        className="bottle-img"
-        src="https://cdn.shopify.com/s/files/1/0689/1443/t/34/assets/bottle_beach.png?v=11784267851598469514"
+        className={`mock-img ${
+          item.appearance === "phone" && "mock-img-phone"
+        }`}
+        src={item.img}
       />
     </div>
   </main>

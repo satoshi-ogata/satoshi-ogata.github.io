@@ -187,7 +187,7 @@ body {
 
 .center {
   display: flex;
-  margin-left: 40px;
+  margin-left: 80px;
   position: relative;
 
   @media screen and (max-width: 830px) {
@@ -195,11 +195,29 @@ body {
     margin-bottom: 56px;
   }
 
-  .bottle-bg {
+  .mock-bg {
     width: 320px;
     height: 450px;
     object-fit: cover;
     border-radius: 160px;
+
+    background: linear-gradient(45deg, #6213ea, #15b0ec, #fbfbfb);
+    background-size: 800% 800%;
+    animation: GradientBackground 10s ease infinite;
+
+    @keyframes GradientBackground {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
 
     @media screen and (max-width: 830px) {
       width: 260px;
@@ -211,7 +229,7 @@ body {
     }
   }
 
-  .bottle-img {
+  .mock-img {
     position: absolute;
     top: 25%;
     left: 0;
@@ -325,27 +343,36 @@ body {
   opacity: 1;
 }
 
-.swiper-slide .bottle-bg {
+.swiper-slide .mock-bg {
   transition-duration: 0.6s;
   opacity: 0;
   object-position: 60%;
 }
 
-.swiper-slide-active .bottle-bg {
-  opacity: 1;
+.swiper-slide-active .mock-bg {
+  opacity: 0.8;
   transform: none;
   object-position: 50%;
 }
 
-.swiper-slide .bottle-img {
+.swiper-slide .mock-img {
   transition-duration: 0.8s;
   transform: scale(1.2);
   opacity: 0;
 }
 
-.swiper-slide-active .bottle-img {
+.swiper-slide-active .mock-img {
   opacity: 1;
-  transform: scale(1.6);
+  transform: scale(2);
+
+  &-phone {
+    transform: scale(1.2);
+
+    @media screen and (max-width: 830px) {
+      transform: scale(1);
+      top: -28px;
+    }
+  }
 }
 
 .overlay {
