@@ -26,7 +26,7 @@ export const items = [
     stack: "React Native, GraphQL",
     description:
       "React Nativeでのアプリ画面開発。ユーザー情報登録、認証画面や、利用者が計測デバイスで計測した心拍数などのデータをグラフでインタラクティブに表示する画面を作成した。",
-    img: "/cure.png",
+    img: "/cure_01.png",
     appearance: "phone",
   },
   {
