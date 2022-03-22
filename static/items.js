@@ -50,7 +50,7 @@ export const items = [
     id: 6,
     title: "ポートフォリオサイト",
     subTitle: "https://github.com/satoshi-ogata/satoshi-ogata.github.io",
-    stack: "Next.js, Sass",
+    stack: "Next.js, Sass, Adobe XD",
     description: "このポートフォリオサイトです。",
     img: "/portfolio.png",
   },
