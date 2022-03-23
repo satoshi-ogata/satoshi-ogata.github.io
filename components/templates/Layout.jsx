@@ -6,7 +6,7 @@ export const Layout = ({ overlay, OverlayContent, children }) => (
     <Header {...overlay} />
     {children}
     <Overlay {...overlay}>
-      {overlay.isOverlayActive && <OverlayContent />}
+      <OverlayContent />
     </Overlay>
   </div>
 );

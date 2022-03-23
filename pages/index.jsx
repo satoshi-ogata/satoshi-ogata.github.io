@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { SwiperPagination } from "../components/molecules/SwiperPagination";
 import { Slide } from "../components/organisms/Slide";
@@ -28,6 +28,25 @@ const IndexTemplate = (props) => {
 const IndexPage = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const [isOverlayActive, setOverlayActive] = useState(false);
+  const [imgLoaded, setImgLoaded] = useState(false);
+
+  useEffect(() => {
+    items.forEach((item) => {
+      const img = new Image();
+      img.src = item.img;
+      img.addEventListener(
+        "load",
+        () => {
+          setImgLoaded(true);
+        },
+        { once: true }
+      );
+    });
+
+    return () => {
+      setImgLoaded(false);
+    };
+  }, []);
 
   const About = () => (
     <section className="about">
@@ -51,7 +70,7 @@ const IndexPage = () => {
     items: items,
     OverlayContent: About,
   };
-  return <IndexTemplate {...props} />;
+  return imgLoaded && <IndexTemplate {...props} />;
 };
 
 export default IndexPage;
