@@ -35,7 +35,7 @@ export const items = [
     subTitle: "売掛金データの管理画面の提供",
     stack: "Java Struts, OracleDB",
     description: "Java Strutsを使用してのJSP画面、サーバーサイドの実装を行う。",
-    img: "/SaaSCRM_01.png",
+    img: "/under_constructing.png",
   },
   {
     id: 5,
@@ -44,7 +44,7 @@ export const items = [
     stack: "React/Redux, Java Spring, Linux",
     description:
       "Reactでの画面リプレースを主に行う。他、非機能要件のテストとして Seleniumを用いたE2Eテストの実施、ツール開発(python)、テスターとしてテスト業務を行う。",
-    img: "/SaaSCRM_01.png",
+    img: "/under_constructing.png",
   },
   {
     id: 6,
